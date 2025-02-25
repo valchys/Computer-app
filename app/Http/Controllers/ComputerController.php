@@ -19,6 +19,17 @@ class ComputerController extends Controller
         return view('computer.index')->with('viewData', $viewData);
     }
 
+    public function show(string $id): View|RedirectResponse
+    {
+        $viewData = [];
+        $computer = Computer::findOrFail($id);
+        $viewData['title'] = $computer['name'].' - Online Store';
+        $viewData['subtitle'] = $computer['name'].' - General information';
+        $viewData['computer'] = $computer;
+
+        return view('computer.show')->with('viewData', $viewData);
+    }
+
     public function create(): View
     {
         $viewData = []; 
