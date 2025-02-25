@@ -30,6 +30,13 @@ class ComputerController extends Controller
         return view('computer.show')->with('viewData', $viewData);
     }
 
+    public function delete($id): RedirectResponse
+    {
+         Computer::destroy($id);
+
+         return redirect()->route('computer.index')-> with('success', 'Computer deleted successfully!');
+    } 
+
     public function create(): View
     {
         $viewData = []; 

@@ -19,8 +19,13 @@
         <p class="card-text">Description: {{ $viewData["computer"]["description"] }}</p>
         <p class="card-text">Stock: {{ $viewData["computer"]["quantity"] }}</p>   
 
-        <a href="{{ route('computer.show', ['id'=> $viewData["computer"]["id"]]) }}"
-          class="btn bg-primary text-white">Delete</a>
+        <form action="{{ route('computer.delete', $viewData["computer"]["id"])}}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button class="btn btn-danger">
+          <b>Delete Computer</b> 
+          </button>
+        </form>
 
       </div>
     </div>

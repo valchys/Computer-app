@@ -42,8 +42,8 @@
     <div class="container">
       <small>
         Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank"
-          href="https://twitter.com/danielgarax">
-          Daniel Correa
+          href="https://co.linkedin.com/in/valeria-corrales-hoyos-485ab5349/es">
+          Valeria Corrales Hoyos
         </a>
       </small>
     </div>
