@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Models\Computer;
+use Illuminate\Http\RedirectResponse;
 
 class ComputerController extends Controller
 {
@@ -15,18 +17,21 @@ class ComputerController extends Controller
         return view('computer.create')->with('viewData', $viewData);
     }
 
-    public function save(Request $request)
+    public function save(Request $request): RedirectResponse
     {
-        $request->validate([
-            'reference' => 'required',
-            'name' => 'required',
-            'brand' => 'required',
-            'quantity' => 'required',
-            'type' => 'required',
-            'description' => 'required',
-            'price' => 'required|gt:0',
-        ]);
+        Computer::validate($request);
+        
+        $newComputer = new Computer();
+        $newComputer -> setReference($request->input('reference'));
+        $newComputer -> setName($request->input('name'));
+        $newComputer -> setBrand($request->input('brand'));
+        $newComputer -> setQuantity($request->input('quantity'));
+        $newComputer -> setType($request->input('type'));
+        $newComputer -> setDescription($request->input('description'));
+        $newComputer -> setPrice($request->input('price'));
+        $newComputer -> save();
 
-        dd($request->all());
+        return redirect()->route('computer.create')->with('success', 'Computer created successfully!');
+
     }
 }

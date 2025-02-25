@@ -14,16 +14,24 @@
               @endforeach
             </ul>
             @endif
-
+            @if(session('success'))
+            <div class="alert alert-success">
+              {{ session('success') }}
+            </div>
+            @endif
             <form method="POST" action="{{ route('computer.save') }}">
               @csrf
-              <input type="text" class="form-control mb-2" placeholder="Enter reference" name="reference" value="{{ old('reference') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter name" name="name" value="{{ old('name') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter brand" name="brand" value="{{ old('brand') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter quantity" name="quantity" value="{{ old('quantity') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter type" name="type" value="{{ old('type') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter description" name="description" value="{{ old('description') }}" />
-              <input type="text" class="form-control mb-2" placeholder="Enter price" name="price" value="{{ old('price') }}" />
+              <input type="text" class="form-control mb-2" placeholder="Enter reference" name="reference" value="{{ old('reference') }}" required />
+              <input type="text" class="form-control mb-2" placeholder="Enter name" name="name" value="{{ old('name') }}" required/>
+              <input type="text" class="form-control mb-2" placeholder="Enter brand" name="brand" value="{{ old('brand') }}" required/>
+              <input type="text" class="form-control mb-2" placeholder="Enter quantity" name="quantity" value="{{ old('quantity') }}" required/>
+              <select class="form-control mb-2" name="type">
+                <option value="" disabled selected>-- Select a type --</option>
+                <option value="desktop" {{ old('type') == 'desktop' ? 'selected' : '' }}>Desktop</option>
+                <option value="laptop" {{ old('type') == 'laptop' ? 'selected' : '' }}>Laptop</option>
+              </select>
+              <input type="text" class="form-control mb-2" placeholder="Enter description" name="description" value="{{ old('description') }}" required/>
+              <input type="text" class="form-control mb-2" placeholder="Enter price" name="price" value="{{ old('price') }}" required/>
               <input type="submit" class="btn btn-primary" value="Send" />
             </form>
           </div>
