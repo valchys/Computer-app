@@ -10,16 +10,16 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">
-          {{ $viewData["computer"]["name"] }}
+          <b>{{ $viewData["computer"]->getName() }}</b>
         </h5>
-        <p class="card-text"style="color: green">$ {{ $viewData["computer"]["price"] }}</p>
-        <p class="card-text">Ref: {{ $viewData["computer"]["reference"] }}</p>
-        <p class="card-text">Brand: {{ $viewData["computer"]["brand"] }}</p>
-        <p class="card-text">Type: {{ $viewData["computer"]["type"] }}</p>
-        <p class="card-text">Description: {{ $viewData["computer"]["description"] }}</p>
-        <p class="card-text">Stock: {{ $viewData["computer"]["quantity"] }}</p>   
+        <p class="card-text"style="color: green">$ {{ $viewData["computer"]->getPrice() }}</p>
+        <p class="card-text">Ref: {{ $viewData["computer"]->getReference() }}</p>
+        <p class="card-text">Brand: {{ $viewData["computer"]->getBrand() }}</p>
+        <p class="card-text">Type: {{ $viewData["computer"]->getType() }}</p>
+        <p class="card-text">Description: {{ $viewData["computer"]->getDescription() }}</p>
+        <p class="card-text">Stock: {{ $viewData["computer"]->getQuantity() }}</p>   
 
-        <form action="{{ route('computer.delete', $viewData["computer"]["id"])}}" method="POST">
+        <form action="{{ route('computer.delete', $viewData["computer"]->getId())}}" method="POST">
           @csrf
           @method('DELETE')
           <button class="btn btn-danger">

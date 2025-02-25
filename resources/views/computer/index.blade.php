@@ -13,9 +13,9 @@
     <div class="card">
       <img src="https://laravel.com/img/logotype.min.svg" class="card-img-top img-card">
       <div class="card-body text-center">
-      <p class="card-text fw-bold">{{ $computer["reference"] }}</p>
-        <a href="{{ route('computer.show', ['id'=> $computer["id"]]) }}"
-          class="btn bg-primary text-white">{{ $computer["name"] }}</a>
+      <p class="card-text fw-bold">{{ $computer->getReference() }}</p>
+        <a href="{{ route('computer.show', ['id'=> $computer->getId()]) }}"
+          class="btn bg-primary text-white">{{ $computer->getName() }}</a>
       </div>
     </div>
   </div>

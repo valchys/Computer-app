@@ -37,27 +37,22 @@ class Computer extends Model
         return $this->attributes['id'];
     }
 
-    public function setId($id): void
-    {
-        $this->attributes['id'] = $id;
-    }
-
     public function getReference(): string
     {
         return $this->attributes['reference'];
     }
 
-    public function setReference($reference): void
+    public function setReference(string $reference): void
     {
         $this->attributes['reference'] = $reference;
     }
 
     public function getName(): string
     {
-        return $this->attributes['name'];
+        return strtoupper($this->attributes['name']);
     }
 
-    public function setName($name): void
+    public function setName(string $name): void
     {
         $this->attributes['name'] = $name;
     }
@@ -67,7 +62,7 @@ class Computer extends Model
         return $this->attributes['brand'];
     }
 
-    public function setBrand($brand): void
+    public function setBrand(string $brand): void
     {
         $this->attributes['brand'] = $brand;
     }
@@ -77,7 +72,7 @@ class Computer extends Model
         return $this->attributes['quantity'];
     }
 
-    public function setQuantity($quantity): void
+    public function setQuantity(int $quantity): void
     {
         $this->attributes['quantity'] = $quantity;
     }
@@ -87,7 +82,7 @@ class Computer extends Model
         return $this->attributes['type'];
     }
 
-    public function setType($type): void
+    public function setType(string $type): void
     {
         $this->attributes['type'] = $type;
     }
@@ -97,7 +92,7 @@ class Computer extends Model
         return $this->attributes['description'];
     }
 
-    public function setDescription($description): void
+    public function setDescription(string $description): void
     {
         $this->attributes['description'] = $description;
     }
@@ -107,7 +102,7 @@ class Computer extends Model
         return $this->attributes['price'];
     }
 
-    public function setPrice($price): void
+    public function setPrice(int $price): void
     {
         $this->attributes['price'] = $price;
     }

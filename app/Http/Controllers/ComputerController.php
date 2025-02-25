@@ -23,8 +23,8 @@ class ComputerController extends Controller
     {
         $viewData = [];
         $computer = Computer::findOrFail($id);
-        $viewData['title'] = $computer['name'].' - Online Store';
-        $viewData['subtitle'] = $computer['name'].' - General information';
+        $viewData['title'] = $computer->getName().' - Online Store';
+        $viewData['subtitle'] = $computer->getName().' - General information';
         $viewData['computer'] = $computer;
 
         return view('computer.show')->with('viewData', $viewData);

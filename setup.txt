@@ -1,0 +1,57 @@
+Configuración del Proyecto Laravel
+
+Este archivo proporciona instrucciones para configurar y ejecutar el proyecto correctamente.
+
+1. Requisitos Previos
+Antes de comenzar, asegúrese de tener instalados los siguientes programas:
+- PHP (>=8.0)
+- Composer
+- MySQL
+- Laravel
+
+2. Instalación del Proyecto
+    2.1.Extraer el archivo .zip en un directorio de su elección.
+    2.2. Abrir una terminal y navegar hasta la carpeta del proyecto.
+    2.3. Ejecutar el siguiente comando para instalar las dependencias:
+    
+    composer install
+
+    2.4. Duplicar el archivo .env.example y renombrarlo como .env
+
+    2.5. Configurar la conexión a la base de datos en el archivo .env:
+
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=nombre_de_la_base_de_datos
+    DB_USERNAME=tu_usuario
+    DB_PASSWORD=tu_contraseña
+
+
+3. Configurar la Base de Datos
+    3.1. Crear una base de datos en MySQL con el nombre definido en .env.
+    3.2. Ejecutar las migraciones para generar las tablas:
+
+    php artisan migrate
+
+4. Ejecutar el Proyecto
+    4.1. Generar la clave de aplicación:
+
+    php artisan key:generate
+
+    4.2. Iniciar el servidor de Laravel:
+
+    php artisan serve
+
+3. Acceder al proyecto en el navegador en la siguiente URL:
+
+    http://127.0.0.1:8000
+
+
+5. Notas Importantes
+- No se incluye el directorio `vendor` en el archivo comprimido; Composer se encargará de generarlo.
+- No se incluye el archivo `.env` original por seguridad. Se debe configurar manualmente según las indicaciones.
+
+
+Con esto, el proyecto estará listo para ejecutarse. Si hay problemas, revisar la configuración o consultar la documentación de Laravel.
+
