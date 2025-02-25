@@ -19,7 +19,6 @@ class Computer extends Model
      * $this->attributes['created_at'] - timestamp - contains the computer created date
      * $this->attributes['updated_at'] - timestamp - contains the computer update date
      */
-    
     public static function validate($request)
     {
         $request->validate([
@@ -33,12 +32,12 @@ class Computer extends Model
         ]);
     }
 
-    public function getId(): int 
+    public function getId(): int
     {
         return $this->attributes['id'];
     }
 
-    public function setId($id): void 
+    public function setId($id): void
     {
         $this->attributes['id'] = $id;
     }
@@ -48,7 +47,7 @@ class Computer extends Model
         return $this->attributes['reference'];
     }
 
-    public function setReference($reference): void 
+    public function setReference($reference): void
     {
         $this->attributes['reference'] = $reference;
     }
@@ -58,7 +57,7 @@ class Computer extends Model
         return $this->attributes['name'];
     }
 
-    public function setName($name): void 
+    public function setName($name): void
     {
         $this->attributes['name'] = $name;
     }
@@ -68,7 +67,7 @@ class Computer extends Model
         return $this->attributes['brand'];
     }
 
-    public function setBrand($brand): void 
+    public function setBrand($brand): void
     {
         $this->attributes['brand'] = $brand;
     }
@@ -78,7 +77,7 @@ class Computer extends Model
         return $this->attributes['quantity'];
     }
 
-    public function setQuantity($quantity): void 
+    public function setQuantity($quantity): void
     {
         $this->attributes['quantity'] = $quantity;
     }
@@ -88,7 +87,7 @@ class Computer extends Model
         return $this->attributes['type'];
     }
 
-    public function setType($type): void 
+    public function setType($type): void
     {
         $this->attributes['type'] = $type;
     }
@@ -98,7 +97,7 @@ class Computer extends Model
         return $this->attributes['description'];
     }
 
-    public function setDescription($description): void 
+    public function setDescription($description): void
     {
         $this->attributes['description'] = $description;
     }
@@ -108,7 +107,7 @@ class Computer extends Model
         return $this->attributes['price'];
     }
 
-    public function setPrice($price): void 
+    public function setPrice($price): void
     {
         $this->attributes['price'] = $price;
     }
