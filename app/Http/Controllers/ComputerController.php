@@ -9,6 +9,16 @@ use Illuminate\Http\RedirectResponse;
 
 class ComputerController extends Controller
 {
+    public function index(): View
+    {
+        $viewData = [];
+        $viewData['title'] = 'Computer - Online Store';
+        $viewData['subtitle'] = 'List of computers';
+        $viewData['computers'] = Computer::all();
+
+        return view('computer.index')->with('viewData', $viewData);
+    }
+
     public function create(): View
     {
         $viewData = []; 

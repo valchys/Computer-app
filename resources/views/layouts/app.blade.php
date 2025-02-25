@@ -20,7 +20,7 @@
         <div class="navbar-nav ms-auto">
           <a class="nav-link active" href="{{ route('home.index') }}">Home</a>
           <a class="nav-link active" href="{{ route('computer.create') }}">Create PC</a>
-          <a class="nav-link active" href="{{ route('home.index') }}">PCs</a>
+          <a class="nav-link active" href="{{ route('computer.index') }}">PCs</a>
         </div>
       </div>
     </div>
