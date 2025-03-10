@@ -30,7 +30,7 @@ class ComputerController extends Controller
         return view('computer.show')->with('viewData', $viewData);
     }
 
-    public function delete($id): RedirectResponse
+    public function delete(string $id): RedirectResponse
     {
         Computer::destroy($id);
 
