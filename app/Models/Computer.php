@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Computer extends Model
 {
     /**
-     * PRODUCT ATTRIBUTES
+     * COMPUTER ATTRIBUTES
      * $this->attributes['id'] - int - contains the computer primary key (id)
      * $this->attributes['reference'] - string - contains the computer's reference number
      * $this->attributes['name'] - string - contains the computer's name
@@ -105,5 +106,15 @@ class Computer extends Model
     public function setPrice(int $price): void
     {
         $this->attributes['price'] = $price;
+    }
+
+    public function getCreatedAt(): Carbon
+    {
+        return $this->attributes['created_at'];
+    }
+
+    public function getUpdatedAt(): Carbon
+    {
+        return $this->attributes['updated_at'];
     }
 }
